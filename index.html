@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet"> 
-    <title>Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <title>Document</title>
     <style>
         * {
             margin: 0;
@@ -15,10 +15,8 @@
         }
 
         body {
-            height:100vh;
-            width: 100%;
-            font-size:20px;
-            font-family: 'Mate SC', serif;  
+            font-size: 20px;
+            font-family: 'Mate SC', serif;
         }
 
         .container {
@@ -27,68 +25,142 @@
             display: grid;
             grid-template-columns: 1fr 2fr;
             grid-template-rows: repeat(5, 1fr);
+
         }
-        .container:before{
+
+        .container:before {
             content: "";
-            position:absolute;
-            height: 100%;
-            width:100%;
+            position: absolute;
+            height: 100vh;
+            width: 100%;
             background: #69dcd9;
-            z-index:-1;
+            z-index: -1;
             clip-path: polygon(33% 100%, 100% 0, 100% 100%, 1% 100%);
         }
 
-        li {
-            list-style-position: inside;
-        }
-        a{
+        a {
             text-decoration: none;
-            color:white;
+            color: white;
         }
-        h3{
+
+        h3 {
             text-decoration: underline;
             margin-bottom: 5px;
         }
 
         .item {
-            padding:20px 30px;
+            padding: 20px 30px;
         }
- 
+
         .item-1 {
             color: white;
             background: #2b2741;
             grid-row-start: span 6;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-between;
         }
 
-        
+        /* responsive */
+
+        @media only screen and (max-width:1000px) {
+
+            body {
+                font-size: 17px;
+            }
+
+            li {
+                margin: 5px;
+            }
+
+        }
+
+        @media only screen and (max-width:760px) {
+            body {
+                font-size: 15px;
+            }
+
+        }
+
+        @media only screen and (max-width:680px) {
+            body {
+                font-size: 17px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(8, 1fr);
+                height: 150vh;
+            }
+
+            .item-1 {
+                grid-row-start: span 4;
+                align-items: center;
+            }
+
+            .container:before {
+                height: 150vh;
+                clip-path: polygon(1% 100%, 100% 35%, 100% 100%, 1% 100%);
+            }
+
+        }
+
+        @media only screen and (max-width:540px) {
+            body {
+                font-size: 17px;
+            }
+        }
+            @media only screen and (max-width:360px) {
+                body {
+                    font-size: 15px;
+                }
+            }
+
+            @media only screen and (max-height:840px) {
+                .container {
+                    height: 200vh;
+                }
+
+                .container:before {
+                    height: 200vh;
+                }
+            }
+
+            @media only screen and (max-height:660px) {
+                .container {
+                    height: 230vh;
+                }
+
+                .container:before {
+                    height: 230vh;
+                }
+            }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="item item-1">
-            <div><h1>Rehan Nihal</h1><br>
-            <h2>Web Developer/Designer</h2>
-        </div>
-        <div>
-            <h3>Contact Info</h3>
-            <p>860 Dariyabad<br>
-                Prayagraj, 211003<br>
-                E-mail:- <a href="mailto:rehan210898@gmail.com"><b>rehan210898@gmail.com</b></a><br>
-                Mobile No:- +91 9125542996</p>
-        </div>
-        <div>
-            <h3>Personal Profile:</h3>
-            <ul>
-                <li>Name : Rehan Nihal</li>
-                <li> Date of Birth : 21 August, 1998</li>
-                <li> Language Known : Hindi , English</li>
-                <li> Marital Status : Single</li>
-            </ul>
-        </div>
+            <div>
+                <h1>Rehan Nihal</h1><br>
+                <h2>Web Developer/Designer</h2>
+            </div>
+            <div>
+                <h3>Contact Info</h3>
+                <p>860 Dariyabad<br>
+                    Prayagraj, 211003<br>
+                    E-mail:- <a href="mailto:rehan210898@gmail.com"><b>rehan210898@gmail.com</b></a><br>
+                    Mobile No:- +91 9125542996</p>
+            </div>
+            <div style="margin-bottom:40px;">
+                <h3>Personal Profile:</h3>
+                <ul>
+                    <li>Name : Rehan Nihal</li>
+                    <li> Date of Birth : 21 August, 1998</li>
+                    <li> Language Known : Hindi , English</li>
+                    <li> Marital Status : Single</li>
+                </ul>
+            </div>
 
         </div>
         <div class="item item-2">
@@ -99,7 +171,7 @@
                 <li>Completed Senior Secondary Education from Central Board of Secondary Education in 2015.</li>
                 <li>Completed Higher Secondary Education from Central Board of Secondary Education in 2013.</li>
             </ul>
-            
+
         </div>
         <div class="item item-3">
             <h3>Key Skills:</h3>
@@ -115,7 +187,7 @@
             <h3>Internship Training:</h3>
             <ul>
                 <li>uCertify IT Certification Allahabad</li>
-                <li style="text-indent: 12px;">Field - Web Development</li>
+                <p style="text-indent: 12px;">Field - Web Development</p>
             </ul>
         </div>
 
@@ -131,9 +203,10 @@
         </div>
         <div class="item item-6">
             <h3>Career Objective:</h3>
-           <p>To pursue a challenging career and be a part of progressive organization that gives a scope to enhance my knowledge and utilizing my skills towards the growth of the organization</p>
-            </div>
-        
+            <p>To pursue a challenging career and be a part of progressive organization that gives a scope to enhance my
+                knowledge and utilizing my skills towards the growth of the organization</p>
+        </div>
+
 
     </div>
 </body>
