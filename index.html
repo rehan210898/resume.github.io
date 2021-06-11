@@ -7,37 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
-    <title>Resume</title>
+    <title>Document</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
+        
 
         body {
-            font-size: 16px;
+            box-sizing: content-box;
+            font-size: 15px;
             font-family: 'Mate SC', serif;
         }
 
         .container {
+            margin: auto;
             height: 100vh;
-            width: 100vw;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: repeat(5, 1fr);
-
+            width:80vw;
+            display: flex;
+            justify-content:center;
+            align-items:center;
         }
-
-        .container:before {
-            content: "";
-            position: absolute;
-            height: 100vh;
-            width: 100%;
-            background: #69dcd9;
-            z-index: -1;
-            clip-path: polygon(33% 100%, 100% 0, 100% 100%, 1% 100%);
-        }
-
+        
         a {
             text-decoration: none;
             color: white;
@@ -47,112 +39,115 @@
             text-decoration: underline;
             margin-bottom: 5px;
         }
-
-        .item {
-            padding: 20px 30px;
-        }
-
-        .item-1 {
-            color: white;
+        .flex-1{
             background: #2b2741;
-            grid-row-start: span 6;
-            display: flex;
+            color: white;
+            position: relative;
+            left:30px;
+            height:80vh;
+            width:25vw;
+            display:flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-around;
+            box-shadow: 8px 8px 8px black;
         }
-
-        /* responsive */
-
-        @media only screen and (max-width:1000px) {
-
-            body {
-                font-size: 15px;
-            }
-
-            li {
-                margin: 5px;
-            }
-
+        .flex-1 div{
+            padding:10px 10px 10px 30px ;
         }
-
-        @media only screen and (max-width:760px) {
-            body {
-                font-size: 14px;
-            }
-
+        .flex-2{
+            color:black;
+            justify-self: flex-end;
+            height:90vh;
+            width:55vw;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            box-shadow: 8px 8px 8px black;
         }
-
-        @media only screen and (max-width:680px) {
-            body {
-                font-size: 13px;
+        .flex-2:before {
+            content: "";
+            position: absolute;
+            height: 90vh;
+            width: 55vw;
+            background: #69dcd9;
+            z-index: -1;
+            clip-path: polygon(0% 100%, 100% 0, 100% 100%, 0% 100%);
+        }
+        .flex-2 div{
+            padding:10px 10px 10px 70px ;
+        }
+        @media screen and (max-width:1250px) {
+            .container{
+                width:95vw;
             }
-
-            .container {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(8, 1fr);
-                height: 150vh;
+            .flex-1{
+                width:30vw;
             }
-
-            .item-1 {
-                grid-row-start: span 4;
+            .flex-2{
+                width:65vw;
+            }
+            .flex-2:before{
+                width:65vw;
+            }
+            
+        }
+        @media screen and (max-width:1000px) {
+             body{
+                font-size:13px;
+             }        
+            
+        }
+        @media screen and (max-width:700px){
+            body{
+                font-size:14px ;
+                line-height:20px;
+            }
+            .container{
+                flex-direction:column;
+                width:100vw;
+                height:auto;
+            }
+            .flex-1{
                 align-items: center;
+                height:80vh;
+                width:100vw;
+                position: static;
+                left:0px;
+                box-shadow: 0px 10px 10px black;
             }
-
-            .container:before {
-                height: 150vh;
-                clip-path: polygon(1% 100%, 100% 35%, 100% 100%, 1% 100%);
+            .flex-2{
+                height:130vh;
+                width: 100vw;
+                box-shadow: 0px 0px 0px black;
+                
             }
-
+            .flex-2:before{
+                height:130vh;
+                width: 100vw;
+           } 
+           .flex-2 div{
+            padding:10px 10px 10px 25px ;
         }
-
-        @media only screen and (max-width:540px) {
-            body {
-                font-size: 16px;
-            }
         }
-            @media only screen and (max-width:360px) {
-                body {
-                    font-size: 14px;
-                }
-            }
-
-            @media only screen and (max-height:840px) {
-                .container {
-                    height: 200vh;
-                }
-
-                .container:before {
-                    height: 200vh;
-                }
-            }
-
-            @media only screen and (max-height:660px) {
-                .container {
-                    height: 230vh;
-                }
-
-                .container:before {
-                    height: 230vh;
-                }
-            }
     </style>
 </head>
 
 <body>
+    
     <div class="container">
-        <div class="item item-1">
-            <div>
+        <div class="flex-1">
+            <div class="item-1">
                 <h1>Rehan Nihal</h1><br>
                 <h2>Web Developer/Designer</h2>
             </div>
-            <div>
+            <div class="item-2">
                 <h3>Contact Info</h3>
                 <p>860 Dariyabad<br>
                     Prayagraj, 211003<br>
                     E-mail:- <a href="mailto:rehan210898@gmail.com"><b>rehan210898@gmail.com</b></a><br>
                     Mobile No:- +91 9125542996</p>
             </div>
-            <div style="margin-bottom:40px;">
+            <div  class="item-3"style="margin-bottom:30px;">
                 <h3>Personal Profile:</h3>
                 <ul>
                     <li>Name : Rehan Nihal</li>
@@ -163,7 +158,8 @@
             </div>
 
         </div>
-        <div class="item item-2">
+        <div class="flex-2">
+        <div class="item-1">
             <h3>Profile Summary:</h3>
             <ul>
                 <li>Pursuing Bachelors of Computer Application from Sam Higginbottom University of Agriculture
@@ -173,7 +169,7 @@
             </ul>
 
         </div>
-        <div class="item item-3">
+        <div class="item-2">
             <h3>Key Skills:</h3>
             <ul>
                 <li>Responsive Website Design</li>
@@ -183,7 +179,7 @@
             </ul>
 
         </div>
-        <div class="item item-4">
+        <div class="item-3">
             <h3>Internship Training:</h3>
             <ul>
                 <li>uCertify IT Certification Allahabad</li>
@@ -191,7 +187,7 @@
             </ul>
         </div>
 
-        <div class="item item-5">
+        <div class="item-4">
             <h3>Technical Skills:</h3>
             <ul>
                 <li>Languages: C, C++, Html, Css, JavaScript, Php, Java.</li>
@@ -201,13 +197,13 @@
                 <li>Library:jQuery</li>
             </ul>
         </div>
-        <div class="item item-6">
+        <div class="item-5">
             <h3>Career Objective:</h3>
             <p>To pursue a challenging career and be a part of progressive organization that gives a scope to enhance my
                 knowledge and utilizing my skills towards the growth of the organization</p>
         </div>
 
-
+    </div>
     </div>
 </body>
 
